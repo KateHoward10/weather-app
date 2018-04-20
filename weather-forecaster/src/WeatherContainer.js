@@ -4,13 +4,13 @@ import { submit } from './data/actions';
 
 const mapStateToProps = state => {
 	return {
-		location: state.location,
+		location: state.get("location"),
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		submit: ( location ) => dispatch(submit(location)),
+		submit: ( search ) => dispatch(submit(search)),
 	};
 };
 

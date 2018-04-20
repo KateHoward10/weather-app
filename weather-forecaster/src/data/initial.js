@@ -1,6 +1,7 @@
+import {Map} from 'immutable';
 
-const initial = {
+const initial = Map({
 	location: "",
-};
+});
 
 export default initial;

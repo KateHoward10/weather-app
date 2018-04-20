@@ -1,5 +1,5 @@
 
-const submit = (state, {search}) => state.location = {location: search};
+const submit = (state, {search}) => state.update("location", location => search);
 
 const reducer = (state, action) => {
 	switch (action.type) {
