@@ -8,7 +8,6 @@ export const getInfo = (location) => dispatch => {
         	axios.get(`/weather/${id}`)
 	      		.then(response => {
 		      		const info = response.data;
-		      		console.log(info);
 		      		dispatch(setInfo(info));
 		      	})
 		});

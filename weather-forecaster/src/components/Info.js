@@ -6,7 +6,6 @@ class Info extends Component {
 	render() {
 		const {location, weather} = this.props;
   		const data = weather.consolidated_weather;
-  		console.log(data);
   		const options = {
 	      title: {
 	        text: 'Six Day Forecast',
@@ -25,15 +24,15 @@ class Info extends Component {
 	      series: [
 	        {
 	          name: 'Min Temp',
-	          data: data.map(day => Math.round(day.min_temp)),
+	          data: data.map(day => day.min_temp),
 	        },
 	        {
 	          name: 'Avg Temp',
-	          data: data.map(day => Math.round(day.the_temp)),
+	          data: data.map(day => day.the_temp),
 	        },
 	        {
 	          name: 'Max Temp',
-	          data: data.map(day => Math.round(day.max_temp)),
+	          data: data.map(day => day.max_temp),
 	        },
 	      ],
 	    };
