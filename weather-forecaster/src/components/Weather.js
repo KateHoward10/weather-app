@@ -5,11 +5,11 @@ import Info from './Info';
 class Weather extends Component {
 
 	render() {
-		const {location} = this.props;
+		const {location, submit} = this.props;
 		return (
 			<div>
-				<Input location={location} submit={this.props.submit}/>
-				{location !== "" ? <Info location={location}/> : null}
+				<Input location={location} submit={submit}/>
+				{location ? <Info location={location}/> : null}
 			</div>
 		);
 	}

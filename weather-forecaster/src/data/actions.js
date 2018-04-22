@@ -5,10 +5,3 @@ export const submit = search => {
         search: search,
     };
 };
-
-export const setWeather = location => {
-	return {
-		type: "setWeather",
-		location: location,
-	}
-}
