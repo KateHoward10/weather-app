@@ -18,6 +18,7 @@ class Input extends Component {
 		e.preventDefault();
 		const search = this.state.search;
 		this.props.submit(search);
+		this.props.display(search);
 	}
 
 	render() {

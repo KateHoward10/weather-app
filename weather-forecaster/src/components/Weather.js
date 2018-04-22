@@ -5,11 +5,11 @@ import Info from './Info';
 class Weather extends Component {
 
 	render() {
-		const {location, submit} = this.props;
+		const {location, weather, submit, display} = this.props;
 		return (
 			<div>
-				<Input location={location} submit={submit}/>
-				{location ? <Info location={location}/> : null}
+				<Input location={location} submit={submit} display={display}/>
+				{weather.consolidated_weather ? <Info location={location} weather={weather}/> : null}
 			</div>
 		);
 	}

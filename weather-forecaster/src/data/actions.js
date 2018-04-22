@@ -5,3 +5,10 @@ export const submit = search => {
         search: search,
     };
 };
+
+export const setInfo = info => {
+	return {
+		type: "setInfo",
+		info: info,
+	}
+}
