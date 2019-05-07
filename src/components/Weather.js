@@ -9,7 +9,7 @@ class Weather extends Component {
 		return (
 			<div>
 				<Input location={location} submit={submit} display={display}/>
-				{weather.consolidated_weather ? <Info location={location} weather={weather}/> : null}
+				{weather.weather ? <Info location={location} weather={weather} /> : null}
 			</div>
 		);
 	}
