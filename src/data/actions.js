@@ -12,3 +12,10 @@ export const setInfo = info => {
 		info: info,
 	}
 }
+
+export const setData = data => {
+	return {
+		type: "setData",
+		data: data,
+	}
+}

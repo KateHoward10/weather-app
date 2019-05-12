@@ -19,6 +19,7 @@ class Input extends Component {
 		const search = this.state.search;
 		this.props.submit(search);
 		this.props.display(search);
+		this.props.chart(search);
 	}
 
 	render() {
