@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from "moment";
 import Highcharts from 'highcharts';
-import { toCelsius } from "../helpers/temperature";
+import { toCelsius, toColour } from "../helpers/temperature";
 
 class Chart extends Component {
 
@@ -32,6 +32,12 @@ class Chart extends Component {
 	          		text: '°C',
 	        	}
 	      	},
+	      	colors: dataSet.map(item => toColour(item.main.temp)),
+	      	plotOptions: {
+	      		column: {
+	      			colorByPoint: true,
+	      		}
+	      	},
 	      	chart: {
 	        	type: 'column',
 	      	},
@@ -40,6 +46,7 @@ class Chart extends Component {
         	},
 	      	series: [
 	        	{
+	        		name: 'Average Temperature',
 	        	  	data: dataSet.map(item => toCelsius(item.main.temp)),
 	        	},
 	      	],
