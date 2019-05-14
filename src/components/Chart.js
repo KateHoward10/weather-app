@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from "moment";
 import Highcharts from 'highcharts';
 import { toCelsius, toColour } from "../helpers/temperature";
+import { getDateRange } from "../helpers/date";
 
 class Chart extends Component {
 
@@ -22,7 +23,7 @@ class Chart extends Component {
 		const dataSet = forecast.list.filter((item, index) => index > ((day-1)*8)-1 && index < day*8);
   		const options = {
   		  	title: {
-  		  		text: `${moment(dataSet[0].dt_txt).format("Do MMM")} - ${moment(dataSet[7].dt_txt).format("Do MMM")}`,
+  		  		text: getDateRange(dataSet),
   		  	},
 	      	xAxis: {
 	        	categories: dataSet.map(item => moment(item.dt_txt).format("HH:mm"))
