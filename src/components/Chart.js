@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from "moment";
 import Highcharts from 'highcharts';
+import { toCelsius } from "../helpers/temperature";
 
 class Chart extends Component {
 
@@ -20,34 +21,28 @@ class Chart extends Component {
 		const { day } = this.state;
 		const dataSet = forecast.list.filter((item, index) => index > ((day-1)*8)-1 && index < day*8);
   		const options = {
-  		  title: {
-  		  	text: `${moment(dataSet[0].dt_txt).format("Do MMM")} - ${moment(dataSet[7].dt_txt).format("Do MMM")}`,
-  		  },
-	      xAxis: {
-	        categories: dataSet.map(item => moment(item.dt_txt).format("HH:mm"))
-	      },
-	      yAxis: {
-	        title: {
-	          text: '°C',
-	        },
-	      },
-	      chart: {
-	        type: 'column',
-	      },
-	      series: [
-	        {
-	          name: 'Min',
-	          data: dataSet.map(item => item.main.temp_min-273.15),
-	        },
-	        {
-	          name: 'Avg',
-	          data: dataSet.map(item => item.main.temp-273.15),
-	        },
-	        {
-	          name: 'Max',
-	          data: dataSet.map(item => item.main.temp_max-273.15),
-	        },
-	      ],
+  		  	title: {
+  		  		text: `${moment(dataSet[0].dt_txt).format("Do MMM")} - ${moment(dataSet[7].dt_txt).format("Do MMM")}`,
+  		  	},
+	      	xAxis: {
+	        	categories: dataSet.map(item => moment(item.dt_txt).format("HH:mm"))
+	      	},
+	      	yAxis: {
+	        	title: {
+	          		text: '°C',
+	        	}
+	      	},
+	      	chart: {
+	        	type: 'column',
+	      	},
+        	legend: {
+        		enabled: false
+        	},
+	      	series: [
+	        	{
+	        	  	data: dataSet.map(item => toCelsius(item.main.temp)),
+	        	},
+	      	],
 	    };
 	    return options;
 	}
