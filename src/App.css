@@ -4,14 +4,32 @@
   font-family: Verdana;
 }
 
-.App-title {
-  padding-bottom: 5vh;
-}
-
 form {
   padding-bottom: 5vh;
 }
 
-.row {
-  padding-bottom: 5vh;
+.container {
+}
+
+.location-overview {
+  padding: 5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 300px;
+}
+
+.location-details {
+  padding: 5vh;
+}
+
+.map {
+  padding: 5vh;
+}
+
+.weather-overview {
+  padding: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
