@@ -15,12 +15,12 @@ form {
   padding: 5vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   min-height: 300px;
 }
 
 .location-details {
-  padding: 5vh;
+  padding-left: 320px;
+  text-align: left;
 }
 
 .map {

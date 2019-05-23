@@ -6,3 +6,7 @@ export const getDateRange = dataSet => {
 	return `${firstDay}${firstDay!==lastDay ? ` - ${lastDay}` : ``}`;
 }
 
+export const getTime = time => {
+	const timeInSeconds = new Date(time * 1000);
+	return moment(timeInSeconds).format("HH:mm");
+}
