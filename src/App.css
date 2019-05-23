@@ -23,8 +23,22 @@ form {
   text-align: left;
 }
 
-.map {
-  padding: 5vh;
+.sun-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.sun-tracker {
+  width: 240px;
+  height: 24px;
+  border: 1px solid lightgrey;
+  position: relative;
+}
+
+.sun {
+  font-size: 20px;
+  position: absolute;
+  top: 0;
 }
 
 .weather-overview {

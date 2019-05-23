@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { formatCoordinates } from "../helpers/latlong";
 import { toCelsius } from "../helpers/temperature";
 import { toIcon } from "../helpers/icon";
-import { getTime } from "../helpers/date";
 import Map from './Map';
+import SunTracker from './SunTracker';
 
 class Info extends Component {
 	render() {
-		const {location, weather} = this.props;
+		const { location, weather } = this.props;
 
 	    return (
       		<div className="container">
@@ -16,8 +16,7 @@ class Info extends Component {
       				<div className="location-details">
 		      			<h3>{location.toUpperCase()}, {weather.sys.country}</h3>
 		      			<p>{formatCoordinates(weather.coord)}</p>
-		      			<p>Sunrise: {getTime(weather.sys.sunrise)}</p>
-		      			<p>Sunset: {getTime(weather.sys.sunset)}</p>
+						<SunTracker sunrise={weather.sys.sunrise} sunset={weather.sys.sunset} />
 	    			</div>
 	      		</div>
       			<div className="weather-overview">

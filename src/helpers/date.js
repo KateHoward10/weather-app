@@ -10,3 +10,15 @@ export const getTime = time => {
 	const timeInSeconds = new Date(time * 1000);
 	return moment(timeInSeconds).format("HH:mm");
 }
+
+export const isNightTime = (sunset) => {
+	const set = new Date(sunset * 1000);
+	const now = new Date();
+	return now > set;
+}
+
+export const getSunPosition = (time) => {
+	const timeSinceMidnight = time==="now" ? new Date().getHours() : new Date(time * 1000).getHours();
+	const dayProportion = timeSinceMidnight / 24;
+	return (dayProportion * 240) - 10;
+}
