@@ -1,16 +1,19 @@
-
-const submit = (state, {search}) => state.update("location", location => search);
-
-const setInfo = (state, {info}) => state.update("weather", weather => info);
-
-const setData = (state, {data}) => state.update("forecast", forecast => data);
+const initialState = {
+	location: '',
+	weather: {},
+	forecast: {}
+};
 
 const reducer = (state, action) => {
 	switch (action.type) {
-		case "submit": return submit(state, action);
-		case "setInfo": return setInfo(state, action);
-		case "setData": return setData(state, action);
-		default: return state;
+		case 'submit':
+			return { ...state, location: action.search };
+		case 'setInfo':
+			return { ...state, weather: action.info };
+		case 'setData':
+			return { ...state, forecast: action.data };
+		default:
+			return initialState;
 	}
 };
 
