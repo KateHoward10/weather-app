@@ -5,9 +5,7 @@ const SunTracker = ({ sunrise, sunset }) => (
   <div className="sun-details">
     <span>Sunrise: {getTime(sunrise)}</span>
     <div className="sun-tracker">
-      <span className="sun" role="img" aria-label="sunrise" style={{ left: getSunPosition(sunrise) }}>
-        🌅
-      </span>
+      <div className="sun-marker" role="img" aria-label="sunrise" style={{ left: getSunPosition(sunrise) }}></div>
       <span
         className="sun"
         role="img"
@@ -16,9 +14,7 @@ const SunTracker = ({ sunrise, sunset }) => (
       >
         {isNightTime(sunset) ? '🌙' : '☀️'}
       </span>
-      <span className="sun" role="img" aria-label="sunset" style={{ left: getSunPosition(sunset) }}>
-        🌇
-      </span>
+      <div className="sun-marker" role="img" aria-label="sunset" style={{ left: getSunPosition(sunset) }}></div>
     </div>
     <span>Sunset: {getTime(sunset)}</span>
   </div>
