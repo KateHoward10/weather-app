@@ -6,9 +6,10 @@ function Input(props) {
 
 	function onSubmit(e) {
 		e.preventDefault();
-		submit(search);
-		display(search);
-		chart(search);
+		const params = `q=${search}`;
+		submit(params);
+		display(params);
+		chart(params);
 	}
 
 	function getLocation(e) {
@@ -25,8 +26,10 @@ function Input(props) {
 	}
 
 	function showPosition(position) {
-		const coords = `${position.coords.latitude}, ${position.coords.longitude}`;
-		setSearch(coords);
+		const params = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+		submit(params);
+		display(params);
+		chart(params);
 	}
 
 	return (

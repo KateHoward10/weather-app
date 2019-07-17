@@ -5,13 +5,13 @@ import { toIcon } from '../helpers/icon';
 import Map from './Map';
 import SunTracker from './SunTracker';
 
-const Info = ({ location, weather }) => (
+const Info = ({ weather }) => (
 	<div className="container">
 		<div className="location-overview">
 			<Map coords={weather.coord} />
 			<div className="location-details">
 				<h3>
-					{location.toUpperCase()}, {weather.sys.country}
+					{weather.name.toUpperCase()}, {weather.sys.country}
 				</h3>
 				<p>{formatCoordinates(weather.coord)}</p>
 				<SunTracker sunrise={weather.sys.sunrise} sunset={weather.sys.sunset} />
