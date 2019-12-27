@@ -2,15 +2,9 @@ import React from 'react';
 import Input from './Input';
 import Info from './Info';
 import Chart from './Chart';
-import { getTime, isNightTime } from '../helpers/date';
 
 const Weather = ({ location, weather, forecast, submit, display, chart }) => (
-	<div
-		className="App"
-		style={{
-			backgroundColor: weather.sys && isNightTime(weather.sys.sunset) ? 'darkblue' : 'lightblue'
-		}}
-	>
+	<div className="App">
 		<header className="App-header">
 			<h1 className="App-title">Weather Forecaster</h1>
 		</header>

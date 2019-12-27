@@ -2,6 +2,9 @@
   text-align: center;
   padding: 5vh;
   font-family: Verdana;
+  background: linear-gradient(blue, dodgerblue);
+  color: #eee;
+  min-height: 100vh;
 }
 
 form {
@@ -14,6 +17,7 @@ button {
   font-family: Verdana;
   font-weight: bold;
   background-color: transparent;
+  color: #eee;
 }
 
 input {
@@ -21,9 +25,7 @@ input {
   font-size: 18px;
   background-color: transparent;
   border-bottom: 1px solid grey;
-}
-
-.container {
+  color: #eee;
 }
 
 .location-overview {
@@ -41,30 +43,14 @@ input {
 .sun-details {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
-.sun-tracker {
-  width: 240px;
-  height: 12px;
-  border-bottom: 1px solid grey;
-  margin-bottom: 12px;
-  position: relative;
-}
-
-.sun-marker {
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: grey;
-  position: absolute;
-  margin-top: 9px;
-}
-
-.sun {
-  font-size: 18px;
-  position: absolute;
-  top: 0;
-  z-index: 20;
+.sun-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
 }
 
 .weather-overview {

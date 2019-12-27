@@ -62,11 +62,11 @@ class Chart extends Component {
 	render() {
 		const { day } = this.state;
 		return (
-			<div>
+			<React.Fragment>
 				<div ref={el => (this.chartEl = el)} />
 				{day > 1 && <button onClick={() => this.setState({ day: day - 1 })}>{`<`}</button>}
 				{day < 5 && <button onClick={() => this.setState({ day: day + 1 })}>></button>}
-			</div>
+			</React.Fragment>
 		);
 	}
 }

@@ -1,22 +1,15 @@
 import React from 'react';
-import { getTime, isNightTime, getSunPosition } from '../helpers/date';
+import { getTime } from '../helpers/date';
+import { WiSunrise, WiSunset } from 'react-icons/wi';
 
 const SunTracker = ({ sunrise, sunset }) => (
   <div className="sun-details">
-    <span>Sunrise: {getTime(sunrise)}</span>
-    <div className="sun-tracker">
-      <div className="sun-marker" role="img" aria-label="sunrise" style={{ left: getSunPosition(sunrise) }}></div>
-      <span
-        className="sun"
-        role="img"
-        aria-label={isNightTime(sunset) ? 'moon' : 'sun'}
-        style={{ left: getSunPosition('now') }}
-      >
-        {isNightTime(sunset) ? '🌙' : '☀️'}
-      </span>
-      <div className="sun-marker" role="img" aria-label="sunset" style={{ left: getSunPosition(sunset) }}></div>
+    <div className="sun-time">
+      <WiSunrise size="30" color="gold" /> {getTime(sunrise)}
     </div>
-    <span>Sunset: {getTime(sunset)}</span>
+    <div className="sun-time">
+      <WiSunset size="30" color="orange" /> {getTime(sunset)}
+    </div>
   </div>
 );
 
