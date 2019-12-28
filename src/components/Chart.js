@@ -4,6 +4,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { toCelsius, toColour } from '../helpers/temperature';
 import { getDateRange } from '../helpers/date';
+import { toIcon } from '../helpers/icon';
 
 function Chart({ forecast }) {
 	const [day, setDay] = useState(1);
@@ -25,7 +26,10 @@ function Chart({ forecast }) {
 		colors: dataSet.map(item => toColour(item.main.temp)),
 		plotOptions: {
 			column: {
-				colorByPoint: true
+				colorByPoint: true,
+				dataLabels: {
+					enabled: true
+				}
 			}
 		},
 		chart: {
@@ -45,6 +49,12 @@ function Chart({ forecast }) {
 	return (
 		<React.Fragment>
 			<HighchartsReact highcharts={Highcharts} options={options} />
+			<div className="weather-icons">
+				<div className="icon-container" />
+				{dataSet.map(item => (
+					<div className="icon-container">{toIcon(item.weather[0].main)}</div>
+				))}
+			</div>
 			{day > 1 && <button onClick={() => setDay(day - 1)}>{`<`}</button>}
 			{day < 5 && <button onClick={() => setDay(day + 1)}>></button>}
 		</React.Fragment>

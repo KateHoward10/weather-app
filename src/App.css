@@ -53,6 +53,20 @@ input {
   margin: 5px;
 }
 
+.weather-icons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 24px;
+}
+
 .weather-overview {
   padding: 5vh;
   display: flex;
