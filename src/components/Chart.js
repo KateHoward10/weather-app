@@ -50,7 +50,6 @@ function Chart({ forecast }) {
 		<React.Fragment>
 			<HighchartsReact highcharts={Highcharts} options={options} />
 			<div className="weather-icons">
-				<div className="icon-container" />
 				{dataSet.map(item => (
 					<div className="icon-container">{toIcon(item.weather[0].main)}</div>
 				))}

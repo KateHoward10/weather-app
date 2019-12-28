@@ -54,9 +54,11 @@ input {
 }
 
 .weather-icons {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
+  margin-left: 72px;
+  margin-right: 10px;
 }
 
 .icon-container {
@@ -72,4 +74,5 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  text-align: center;
 }
