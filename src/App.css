@@ -51,6 +51,7 @@ input {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  text-align: center;
 }
 
 .weather-icons {
@@ -63,10 +64,15 @@ input {
 
 .icon-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5px;
   font-size: 24px;
+}
+
+.icon {
+  vertical-align: bottom;
 }
 
 .weather-overview {
@@ -74,5 +80,4 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  text-align: center;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { WiDaySunny, WiCloudy, WiShowers, WiRain, WiThunderstorm, WiSnow, WiFog } from 'react-icons/wi';
+import { WiDaySunny, WiCloudy, WiShowers, WiRain, WiThunderstorm, WiSnow, WiFog, WiWindDeg } from 'react-icons/wi';
 
 export const toIcon = description => {
 	switch (description) {
@@ -28,4 +28,8 @@ export const toIcon = description => {
 		default:
 			return null;
 	}
+};
+
+export const toWindIcon = deg => {
+	return <WiWindDeg style={{ transform: `rotate(${deg}deg)` }} />;
 };

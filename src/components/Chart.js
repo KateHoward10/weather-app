@@ -4,12 +4,13 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { toCelsius, toColour } from '../helpers/temperature';
 import { getDateRange } from '../helpers/date';
-import { toIcon } from '../helpers/icon';
+import { toIcon, toWindIcon } from '../helpers/icon';
 
 function Chart({ forecast }) {
 	const [day, setDay] = useState(1);
 	const dataSet = forecast.list.filter((item, index) => index > (day - 1) * 8 - 1 && index < day * 8);
 	const times = dataSet.map(item => moment(item.dt_txt).format('HH:mm'));
+	console.log(dataSet);
 
 	const options = {
 		title: {
@@ -51,7 +52,10 @@ function Chart({ forecast }) {
 			<HighchartsReact highcharts={Highcharts} options={options} />
 			<div className="weather-icons">
 				{dataSet.map(item => (
-					<div className="icon-container">{toIcon(item.weather[0].main)}</div>
+					<div className="icon-container">
+						{toIcon(item.weather[0].main)}
+						{toWindIcon(item.wind.deg)}
+					</div>
 				))}
 			</div>
 			{day > 1 && <button onClick={() => setDay(day - 1)}>{`<`}</button>}
