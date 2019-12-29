@@ -5,6 +5,7 @@ import HighchartsReact from 'highcharts-react-official';
 import { toCelsius, toColour } from '../helpers/temperature';
 import { getDateRange } from '../helpers/date';
 import { toIcon, toWindIcon } from '../helpers/icon';
+import { toMilesPerHour } from '../helpers/wind';
 
 function Chart({ forecast }) {
 	const [day, setDay] = useState(1);
@@ -55,6 +56,7 @@ function Chart({ forecast }) {
 					<div className="icon-container">
 						{toIcon(item.weather[0].main)}
 						{toWindIcon(item.wind.deg)}
+						<span className="text-detail">{toMilesPerHour(item.wind.speed)}</span>
 					</div>
 				))}
 			</div>

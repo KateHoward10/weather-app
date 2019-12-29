@@ -71,7 +71,11 @@ input {
   font-size: 24px;
 }
 
-.icon {
+.text-detail {
+  font-size: 10px;
+}
+
+svg {
   vertical-align: bottom;
 }
 

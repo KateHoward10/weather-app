@@ -1,7 +1,8 @@
 import React from 'react';
 import { formatCoordinates } from '../helpers/latlong';
 import { toCelsius } from '../helpers/temperature';
-import { toIcon } from '../helpers/icon';
+import { toIcon, toWindIcon } from '../helpers/icon';
+import { toMilesPerHour } from '../helpers/wind';
 import Map from './Map';
 import SunTracker from './SunTracker';
 
@@ -30,6 +31,14 @@ const Info = ({ weather }) => (
 				</p>
 				<p>
 					{weather.weather[0].description} {toIcon(weather.weather[0].main)}
+				</p>
+			</div>
+			<div>
+				<p>
+					<b>Current wind</b>
+				</p>
+				<p>
+					{toWindIcon(weather.wind.deg)} {toMilesPerHour(weather.wind.speed)}
 				</p>
 			</div>
 		</div>

@@ -31,5 +31,5 @@ export const toIcon = description => {
 };
 
 export const toWindIcon = deg => {
-	return <WiWindDeg style={{ transform: `rotate(${deg}deg)` }} />;
+	return <WiWindDeg style={{ transform: `rotate(${deg - 180}deg)` }} />;
 };
