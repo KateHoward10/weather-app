@@ -30,7 +30,7 @@ const Info = ({ weather }) => (
 					<b>Current weather</b>
 				</p>
 				<p>
-					{weather.weather[0].description} {toIcon(weather.weather[0].main)}
+					{weather.weather[0].description} {toIcon(weather.weather[0].main, weather.sys.pod)}
 				</p>
 			</div>
 			<div>

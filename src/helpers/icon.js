@@ -1,10 +1,20 @@
 import React from 'react';
-import { WiDaySunny, WiCloudy, WiShowers, WiRain, WiThunderstorm, WiSnow, WiFog, WiWindDeg } from 'react-icons/wi';
+import {
+	WiDaySunny,
+	WiNightClear,
+	WiCloudy,
+	WiShowers,
+	WiRain,
+	WiThunderstorm,
+	WiSnow,
+	WiFog,
+	WiWindDeg
+} from 'react-icons/wi';
 
-export const toIcon = description => {
+export const toIcon = (description, time) => {
 	switch (description) {
 		case 'Clear':
-			return <WiDaySunny />;
+			return time === 'n' ? <WiNightClear /> : <WiDaySunny />;
 		case 'Clouds':
 			return <WiCloudy />;
 		case 'Drizzle':

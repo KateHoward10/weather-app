@@ -54,7 +54,7 @@ function Chart({ forecast }) {
 			<div className="weather-icons">
 				{dataSet.map(item => (
 					<div className="icon-container">
-						{toIcon(item.weather[0].main)}
+						{toIcon(item.weather[0].main, item.sys.pod)}
 						{toWindIcon(item.wind.deg)}
 						<span className="text-detail">{toMilesPerHour(item.wind.speed)}</span>
 					</div>
