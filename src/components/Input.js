@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-function Input(props) {
+function Input({ submit, display, chart }) {
 	const [search, setSearch] = useState('');
-	const { submit, display, chart } = props;
 
 	function onSubmit(e) {
 		e.preventDefault();

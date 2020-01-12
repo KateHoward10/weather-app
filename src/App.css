@@ -28,16 +28,10 @@ input {
   color: #eee;
 }
 
-.location-overview {
-  padding: 5vh;
-  display: flex;
-  flex-direction: row;
-  min-height: 300px;
-}
-
 .location-details {
-  padding-left: 320px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sun-details {

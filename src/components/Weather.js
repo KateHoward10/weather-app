@@ -5,9 +5,6 @@ import Chart from './Chart';
 
 const Weather = ({ location, weather, forecast, submit, display, chart }) => (
 	<div className="App">
-		<header className="App-header">
-			<h1 className="App-title">Weather Forecaster</h1>
-		</header>
 		<p>To begin, search for a location.</p>
 		<div>
 			<Input location={location} submit={submit} display={display} chart={chart} />
